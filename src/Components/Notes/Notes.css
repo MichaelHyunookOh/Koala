@@ -6,6 +6,30 @@
   height: 13.5em;
 }
 
+input {
+  margin-bottom: 10px;
+}
+
+#textInput {
+  height: 50px;
+}
+
+#colorInput {
+  width: 150px;
+}
+
 .editForm {
-  z-index: 99;
+  display: flex;
+  margin: auto;
+  height: 200px;
+  width: 80%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.formContainer {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 100%;
 }

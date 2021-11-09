@@ -1,3 +1,6 @@
 .canvasContainer {
   min-height: 1000px;
 }
+.actions {
+  text-align: center;
+}

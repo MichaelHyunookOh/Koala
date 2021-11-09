@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import _uniqueId from "lodash/uniqueId";
-import Draggable from "react-draggable";
 import { Notes } from "../Notes/Notes";
 import "./Canvas.css";
 
@@ -26,11 +25,11 @@ export const Canvas = () => {
 
   return (
     <div className="canvasContainer">
-      <div>
-        <button onClick={handleAdd} type="submit">
+      <div className="actions">
+        <button onClick={handleAdd} type="button">
           add
         </button>
-        <button onClick={handleDeleteAll} type="submit">
+        <button onClick={handleDeleteAll} type="button">
           Delete All
         </button>
       </div>

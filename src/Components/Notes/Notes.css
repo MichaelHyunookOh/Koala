@@ -1,9 +1,39 @@
 .noteCard {
   display: inline-block;
   position: absolute;
-  /* background-color: rgb(234, 245, 90); */
-  width: 14em;
-  height: 13.5em;
+  border-radius: 3px;
+  width: 15em;
+  height: 15em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.noteActions {
+  text-align: end;
+}
+
+#deleteNote {
+  background: none;
+  border-style: none;
+}
+
+#deleteNote:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#editNote {
+  background: none;
+  border-style: none;
+}
+
+#editNote:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+img {
+  width: 15px;
+  margin-bottom: -3px;
 }
 
 input {
@@ -12,6 +42,7 @@ input {
 
 #textInput {
   height: 50px;
+  max-width: 320px;
 }
 
 #colorInput {

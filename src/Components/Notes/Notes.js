@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import _uniqueId from "lodash/uniqueId";
+import Edit from "./Icons/editNote.png";
 import { Modal } from "./Modal/Modal";
 import Draggable from "react-draggable";
 import "./Notes.css";
 
 export const Notes = (props) => {
-  const [text, setText] = useState("hello");
-  const [editText, setEditText] = useState("hello");
+  const [text, setText] = useState("");
+  const [editText, setEditText] = useState("");
   const [noteColor, setNoteColor] = useState("rgb(234, 245, 90)");
   const [newNoteColor, setNewNoteColor] = useState("rgb(234, 245, 90)");
   const [show, setShow] = useState(false);
@@ -14,7 +15,7 @@ export const Notes = (props) => {
   const editForm = () => {
     return (
       <div className="formContainer">
-        <form className="editForm">
+        <form className="editForm" onSubmit={handleEditClose}>
           <label for="textInput">Edit text</label>
           <textarea
             id="textInput"
@@ -28,7 +29,7 @@ export const Notes = (props) => {
             defaultValue={noteColor}
             onChange={(e) => setNewNoteColor(e.target.value)}
           ></input>
-          <button type="button" id="submitEditButton" onClick={handleEditClose}>
+          <button type="submit" id="submitEditButton">
             Submit
           </button>
         </form>
@@ -41,6 +42,7 @@ export const Notes = (props) => {
   };
 
   const handleEditClose = (e) => {
+    e.preventDefault();
     setShow(false);
     setText(editText);
     setNoteColor(newNoteColor);
@@ -54,11 +56,17 @@ export const Notes = (props) => {
     <>
       <Draggable>
         <div className="noteCard" style={{ backgroundColor: noteColor }}>
-          <p>{text}</p>
-          <button type="button" onClick={showModal}>
-            edit{" "}
-          </button>
-          <button onClick={deleteCard}>delete </button>
+          <div className="noteActions">
+            <button id="editNote" type="button" onClick={showModal}>
+              <img src={Edit} alt="edit" />
+            </button>
+            <button id="deleteNote" onClick={deleteCard}>
+              X{" "}
+            </button>
+          </div>
+          <div>
+            <p>{text}</p>
+          </div>
         </div>
       </Draggable>
       <Modal show={show}>{editForm()}</Modal>

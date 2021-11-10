@@ -17,9 +17,9 @@ export const Canvas = () => {
   };
 
   const deleteCard = (id) => {
-    console.log(id);
-    console.log(notesList);
-    console.log(notesList.filter((item) => item !== id));
+    // console.log(id);
+    // console.log(notesList);
+    // console.log(notesList.filter((item) => item !== id));
     setNotesList(notesList.filter((item) => item !== id));
   };
 
@@ -27,7 +27,7 @@ export const Canvas = () => {
     <div className="canvasContainer">
       <div className="actions">
         <button onClick={handleAdd} type="button">
-          add
+          Add Note
         </button>
         <button onClick={handleDeleteAll} type="button">
           Delete All
